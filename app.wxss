@@ -1,0 +1,11 @@
+/**公用样式**/
+view{
+  margin: 0;
+  padding: 0;
+}
+/*页面包裹*/
+.container {
+  height: 100%;
+  box-sizing: border-box;
+  line-height: 1;
+}

@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+    <!--柱状图-->
+    <view class="graph">
+        <view class="graph-head">
+            本周步数
+            <view class="graph-head-today">今日步数：{{stepList.todayStep}}</view>
+            <view class="graph-head-limit">2W</view>
+        </view>
+        <!--柱子-->
+        <view class="graph-content">
+            <view wx:for="{{stepList.barHeight}}"  wx:for-index="idx" wx:key="*this"
+                  class="graph-content-bar-wrap  bar-left-{{idx}}"
+                  bindtap="showStepTap" data-idx="{{idx}}">
+                <view class="graph-content-bar" style="height:{{item}}rpx;"
+                ></view>
+            </view>
+            <!--步数-->
+            <view wx:for="{{stepList.step}}"  wx:for-index="idx" wx:key="*this"
+                  class="graph-content-step graph-li bar-left-{{idx}} {{(stepList.showingStepIdx==idx)?'top-2':''}} "
+            >{{item}}</view>
+        </view>
+        <!--日期-->
+        <view class="graph-date">
+            <view wx:for="{{stepList.date}}"  wx:for-index="idx" wx:key="*this"
+                  class="graph-li bar-left-{{idx}}"
+            >{{item}}</view>
+        </view>
+    </view>
+</view>

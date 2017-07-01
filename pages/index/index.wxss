@@ -1,0 +1,116 @@
+/*柱状图*/
+.graph{
+  width: 690rpx;
+  height: 423rpx;
+  margin: 42rpx auto 20rpx;
+  background: #1c8d9f; /* 一些不支持背景渐变的浏览器 */
+  background:-webkit-gradient(linear, 0 0, right bottom, from(#2cbb85), to(#1c8d9f));
+  border-radius: 8rpx;
+  position: relative;
+}
+.graph-head{
+  width: 590rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-bottom: 1rpx dotted #fff;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  position: relative;
+}
+.graph-head-today{
+  position: absolute;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  height: 30rpx;
+  top: 32rpx;
+  right: -20rpx;
+  color: #fff;
+}
+.graph-head-limit{
+  position: absolute;
+  font-size: 30rpx;
+  width: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  bottom: -20rpx;
+  right: -32rpx;
+}
+/*柱状图*/
+.graph-content{
+  width: 653rpx;
+  height: 300rpx;
+  margin: 0 auto;
+  background:-webkit-gradient(linear, 0 0, 0 bottom, from(transparent), to(rgba(255,255,255,.1)));
+  position: relative;
+  overflow: hidden;
+}
+/*柱子*/
+.graph-content-bar{
+  height: 100%;
+  border-radius: 6rpx;
+  background: rgba(255,255,255,.5);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -6rpx;
+  width: 12rpx;
+  min-height: 5rpx;
+}
+/*柱子外层包裹*/
+.graph-content-bar-wrap{
+  width: 50rpx;
+  margin-left: -18rpx;
+  position: absolute;
+  top: 0;
+  height: 100%;
+}
+/*列表共通*/
+.graph-li{
+  font-size: 22rpx;
+  position: absolute;
+  line-height: 1;
+  text-align: center;
+}
+.bar-left-0{
+  left: 50rpx;
+}
+.bar-left-1{
+  left: 140rpx;
+}
+.bar-left-2{
+  left: 230rpx;
+}
+.bar-left-3{
+  left: 320rpx;
+}
+.bar-left-4{
+  left: 410rpx;
+}
+.bar-left-5{
+  left: 500rpx;
+}
+.bar-left-6{
+  left: 590rpx;
+}
+/*步数*/
+.graph-content-step{
+  position: absolute;
+  margin-left: -40rpx;
+  top: 100%;
+  color: #fff;
+  transition: top 500ms;
+  width: 90rpx;
+}
+.top-2{
+  top: 2rpx;
+}
+/*日期*/
+.graph-date view{
+  margin-left: -30rpx;
+  bottom: 13rpx;
+  color: #fff;
+  color: rgba(255,255,255,.5);
+  width: 110rpx;
+}
