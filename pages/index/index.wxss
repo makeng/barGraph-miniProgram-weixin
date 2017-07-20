@@ -9,14 +9,12 @@
   position: relative;
 }
 .graph-head{
-  width: 590rpx;
+  width: 82%;
   height: 76rpx;
   line-height: 76rpx;
-  border-bottom: 1rpx dotted #fff;
   margin: 0 auto;
   color: #fff;
   font-size: 30rpx;
-  text-align: center;
   position: relative;
 }
 .graph-head-today{
@@ -28,27 +26,16 @@
   right: -20rpx;
   color: #fff;
 }
-.graph-head-limit{
-  position: absolute;
-  font-size: 30rpx;
-  width: 30rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  bottom: -20rpx;
-  right: -32rpx;
-}
-/*柱状图*/
+/*柱状图content*/
 .graph-content{
   width: 653rpx;
   height: 300rpx;
   margin: 0 auto;
   background:-webkit-gradient(linear, 0 0, 0 bottom, from(transparent), to(rgba(255,255,255,.1)));
   position: relative;
-  overflow: hidden;
 }
 /*柱子*/
 .graph-content-bar{
-  height: 100%;
   border-radius: 6rpx;
   background: rgba(255,255,255,.5);
   position: absolute;
@@ -56,7 +43,8 @@
   left: 50%;
   margin-left: -6rpx;
   width: 12rpx;
-  min-height: 5rpx;
+  height: 0;
+  transition: height 500ms;
 }
 /*柱子外层包裹*/
 .graph-content-bar-wrap{
@@ -65,6 +53,37 @@
   position: absolute;
   top: 0;
   height: 100%;
+}
+/*y轴线*/
+.graph-content-line{
+  position: absolute;
+  left: 7%;
+  width: 86%;
+  height: 0;
+}
+.line1{
+  top: 0;
+  border-bottom: 1rpx dotted #fff;
+}
+.line2{
+  top: 25%;
+  border-bottom: 1rpx dotted rgba(255,255,255,0.5);
+}
+.line3{
+  top: 50%;
+  border-bottom: 1rpx dotted rgba(255,255,255,0.5);
+}
+.graph-content-line text{
+  display: block;
+  position: absolute;
+  top: -50%;
+  left: 102%;
+  color: #fff;
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 22rpx;
+  margin-top: -14rpx;
 }
 /*列表共通*/
 .graph-li{
@@ -97,14 +116,18 @@
 /*步数*/
 .graph-content-step{
   position: absolute;
-  margin-left: -40rpx;
+  margin-left: -38rpx;
+  text-align: center;
   top: 100%;
   color: #fff;
-  transition: top 500ms;
+  transition: all 500ms;
   width: 90rpx;
+  font-size: 22rpx;
+  opacity: 0;
 }
-.top-2{
+.top-2percent{
   top: 2rpx;
+  opacity: 1;
 }
 /*日期*/
 .graph-date view{

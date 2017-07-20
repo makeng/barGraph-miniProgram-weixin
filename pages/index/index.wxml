@@ -3,26 +3,30 @@
     <!--柱状图-->
     <view class="graph">
         <view class="graph-head">
-            本周步数
+            一周步数
             <view class="graph-head-today">今日步数：{{stepList.todayStep}}</view>
-            <view class="graph-head-limit">2W</view>
         </view>
-        <!--柱子-->
+        <!--柱子盒子-->
         <view class="graph-content">
-            <view wx:for="{{stepList.barHeight}}"  wx:for-index="idx" wx:key="*this"
+            <!--Y轴线-->
+            <view class="graph-content-line line1"><text>2W</text></view>
+            <view class="graph-content-line line2"><text>1.5W</text></view>
+            <view class="graph-content-line line3"><text>1W</text></view>
+            <!--柱子-->
+            <view wx:for="{{stepList.barHeight}}"  wx:for-index="idx" wx:key="idx"
                   class="graph-content-bar-wrap  bar-left-{{idx}}"
                   bindtap="showStepTap" data-idx="{{idx}}">
                 <view class="graph-content-bar" style="height:{{item}}rpx;"
                 ></view>
             </view>
             <!--步数-->
-            <view wx:for="{{stepList.step}}"  wx:for-index="idx" wx:key="*this"
-                  class="graph-content-step graph-li bar-left-{{idx}} {{(stepList.showingStepIdx==idx)?'top-2':''}} "
+            <view wx:for="{{stepList.step}}"  wx:for-index="idx" wx:key="idx"
+                  class="graph-content-step graph-li bar-left-{{idx}} {{(stepList.showingStepIdx==idx)?'top-2percent':''}}"
             >{{item}}</view>
         </view>
         <!--日期-->
         <view class="graph-date">
-            <view wx:for="{{stepList.date}}"  wx:for-index="idx" wx:key="*this"
+            <view wx:for="{{stepList.date}}"  wx:for-index="idx" wx:key="idx"
                   class="graph-li bar-left-{{idx}}"
             >{{item}}</view>
         </view>
